@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class VisualEffectBehavior : MonoBehaviour {
     public Rigidbody2D rb;
-    public Transform target;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public GameObject Player;
-    public PlayerBehavior playerBehavior;
     public LayerMask enemyLayer;
     
     public float attackRange = 0.5f;
     public bool isAttacking = false;
 
     private const float offsetDistance = 1f;
-
     private float offsetX = 0f;
     private float offsetY = 0f;
 
@@ -63,8 +60,8 @@ public class VisualEffectBehavior : MonoBehaviour {
             offsetY = (lookDir.y / hypotenuse) * offsetDistance;
 
             Vector3 tempPosition = transform.position;
-            tempPosition.x = target.position.x + offsetX;
-            tempPosition.y = target.position.y + offsetY;
+            tempPosition.x = Player.transform.position.x + offsetX;
+            tempPosition.y = Player.transform.position.y + offsetY;
             
             transform.position = tempPosition;
         }
