@@ -23,10 +23,12 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetBool("isRunning", false);
         }
 
-        if(movement.x < 0) {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if(transform.position.x > mousePos.x) {
             spriteRenderer.flipX = true;
             isFacingRight = false;
-        } else if(movement.x > 0) {
+        } else if(transform.position.x < mousePos.x) {
             spriteRenderer.flipX = false;
             isFacingRight = true;
         }

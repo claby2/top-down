@@ -6801,6 +6801,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
+  MainCamera: {fileID: 519420028}
   attackRange: 0.5
   isAttacking: 0
 --- !u!95 &1346427841
