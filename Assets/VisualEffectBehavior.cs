@@ -25,7 +25,7 @@ public class VisualEffectBehavior : MonoBehaviour {
 
     void Update() {
         if(Input.GetMouseButtonDown(0) && !isAttacking) {
-            MainCamera.GetComponent<CameraScreenShake>().StartShake(.1f, .1f);
+            MainCamera.GetComponent<CameraScreenShake>().StartShake(.1f, .01f);
             isAttacking = true;
             spriteRenderer.enabled = true;
             animator.SetBool("Attack", true);
