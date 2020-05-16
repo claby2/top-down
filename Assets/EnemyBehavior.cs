@@ -13,20 +13,17 @@ public class EnemyBehavior : MonoBehaviour {
     public float health;
 
     public void takeDamage() {
+        spriteRenderer.material.SetFloat("_FlashAmount", 1); 
         health -= Player.GetComponent<PlayerBehavior>().damage;
         if(health <= 0) {
             Destroy(gameObject);
+        } else {
+            Invoke("resetBlink", .1f);
         }
     }
 
-    void Update() {
-        // if(PlayerVisualEffect.GetComponent<VisualEffectBehavior>().isAttacking && Vector3.Distance(transform.position, PlayerVisualEffect.transform.position) <= 1f) {
-        //     health -= Player.GetComponent<PlayerBehavior>().damage;
-        //     Debug.Log(health);
-        //     if(health <= 0) {
-        //         Destroy(gameObject);
-        //     }
-        // }
+    void resetBlink() {
+        spriteRenderer.material.SetFloat("_FlashAmount", 0);
     }
 
     void FixedUpdate() {
