@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SpawnerBehavior : MonoBehaviour {
 
-    public Transform target;
+    public GameObject Player;
     public GameObject PlayerVisualEffect;
-    public VisualEffectBehavior visualEffectBehavior;
     public GameObject[] enemies;
     public float spawnArea;
 
@@ -16,9 +15,8 @@ public class SpawnerBehavior : MonoBehaviour {
             spawnPosition.x = Random.Range(transform.position.x - (spawnArea / 2), transform.position.x + (spawnArea / 2));
             spawnPosition.y = Random.Range(transform.position.y - (spawnArea / 2), transform.position.y + (spawnArea / 2));
             GameObject enemy = Instantiate(enemies[i], spawnPosition, Quaternion.identity);
-            enemy.GetComponent<EnemyBehavior>().target = target;
+            enemy.GetComponent<EnemyBehavior>().Player = Player;
             enemy.GetComponent<EnemyBehavior>().PlayerVisualEffect = PlayerVisualEffect;
-            enemy.GetComponent<EnemyBehavior>().visualEffectBehavior = visualEffectBehavior;
         }
     }
 }

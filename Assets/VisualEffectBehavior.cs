@@ -9,7 +9,7 @@ public class VisualEffectBehavior : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
     public GameObject Player;
     public PlayerBehavior playerBehavior;
-    public LayerMask enemyLayers;
+    public LayerMask enemyLayer;
     
     public float attackRange = 0.5f;
     public bool isAttacking = false;
@@ -27,10 +27,15 @@ public class VisualEffectBehavior : MonoBehaviour {
 
     void Update() {
         if(Input.GetMouseButtonDown(0) && !isAttacking) {
-
             isAttacking = true;
             spriteRenderer.enabled = true;
             animator.SetBool("Attack", true);
+
+            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayer);
+
+            for(int i = 0; i < enemiesToDamage.Length; i++) {
+                enemiesToDamage[i].GetComponent<EnemyBehavior>().takeDamage();
+            }
         }
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

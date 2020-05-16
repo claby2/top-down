@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4064380314055074469}
   - component: {fileID: 4064380314055074468}
   - component: {fileID: 4064380314055074471}
-  - component: {fileID: 4064380314055074467}
   - component: {fileID: 4064380314055074466}
   - component: {fileID: 4064380314055074464}
+  - component: {fileID: -5341175556345730975}
   m_Layer: 10
   m_Name: EnemySlime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,25 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4064380314055074467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4064380314055074470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbc2da0b19df11147ab13b3dbccba25e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  rb: {fileID: 4064380314055074471}
-  animator: {fileID: 4064380314055074466}
-  spriteRenderer: {fileID: 4064380314055074468}
-  target: {fileID: 0}
-  PlayerVisualEffect: {fileID: 0}
-  visualEffectBehavior: {fileID: 0}
 --- !u!95 &4064380314055074466
 Animator:
   serializedVersion: 3
@@ -170,3 +151,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.7504821}
   m_EdgeRadius: 0
+--- !u!114 &-5341175556345730975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064380314055074470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc2da0b19df11147ab13b3dbccba25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  rb: {fileID: 4064380314055074471}
+  animator: {fileID: 4064380314055074466}
+  spriteRenderer: {fileID: 4064380314055074468}
+  Player: {fileID: 0}
+  PlayerVisualEffect: {fileID: 0}
+  health: 5

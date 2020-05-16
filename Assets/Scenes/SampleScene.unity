@@ -1555,9 +1555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c7ff82e71ac0740928d3ecf14bde0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 395939331}
+  Player: {fileID: 395939328}
   PlayerVisualEffect: {fileID: 1346427839}
-  visualEffectBehavior: {fileID: 1346427840}
   enemies:
   - {fileID: 4064380314055074470, guid: 6bea49a9d6cbef744930a6153b4594ff, type: 3}
   - {fileID: 4064380314055074470, guid: 6bea49a9d6cbef744930a6153b4594ff, type: 3}
@@ -2722,6 +2721,7 @@ MonoBehaviour:
   animator: {fileID: 395939333}
   spriteRenderer: {fileID: 395939330}
   isFacingRight: 1
+  damage: 1
 --- !u!95 &395939333
 Animator:
   serializedVersion: 3
@@ -2902,7 +2902,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1346427842}
   Player: {fileID: 395939328}
   playerBehavior: {fileID: 395939332}
-  enemyLayers:
+  enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
   attackRange: 0.5

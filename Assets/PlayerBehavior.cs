@@ -9,6 +9,7 @@ public class PlayerBehavior : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
 
     public bool isFacingRight = true;
+    public float damage = 1f;
 
     Vector2 movement;
 
