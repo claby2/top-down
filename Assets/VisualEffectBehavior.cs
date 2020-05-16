@@ -8,6 +8,7 @@ public class VisualEffectBehavior : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
     public GameObject Player;
     public LayerMask enemyLayer;
+    public GameObject MainCamera;
     
     public float attackRange = 0.5f;
     public bool isAttacking = false;
@@ -24,6 +25,7 @@ public class VisualEffectBehavior : MonoBehaviour {
 
     void Update() {
         if(Input.GetMouseButtonDown(0) && !isAttacking) {
+            MainCamera.GetComponent<CameraScreenShake>().StartShake(.1f, .1f);
             isAttacking = true;
             spriteRenderer.enabled = true;
             animator.SetBool("Attack", true);
