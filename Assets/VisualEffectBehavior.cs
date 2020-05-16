@@ -8,7 +8,7 @@ public class VisualEffectBehavior : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
     public GameObject Player;
     public LayerMask enemyLayer;
-    public GameObject MainCamera;
+    public Camera MainCamera;
     
     public float attackRange = 0.5f;
     public bool isAttacking = false;
@@ -37,7 +37,7 @@ public class VisualEffectBehavior : MonoBehaviour {
             }
         }
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = MainCamera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void EndSlash() {

@@ -7,6 +7,7 @@ public class PlayerBehavior : MonoBehaviour {
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public Camera MainCamera;
 
     public bool isFacingRight = true;
     public float damage = 1f;
@@ -23,7 +24,7 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetBool("isRunning", false);
         }
 
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = MainCamera.ScreenToWorldPoint(Input.mousePosition);
 
         if(transform.position.x > mousePos.x) {
             spriteRenderer.flipX = true;
